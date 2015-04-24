@@ -1,0 +1,352 @@
+html, body, header, footer, nav, article, section, figure, figcaption, h1, h2, h3, ul, li, body, div, p, img
+{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    border: 0;
+}
+
+body, html {
+    margin:0;
+    padding:0;
+    border:0;
+    width:100%;
+    background:#fff;
+    min-width:48em;
+    font-size:90%;
+}
+
+header, body {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header, footer {
+background-color: #3f3622;
+}
+
+footer {
+    color: white;
+}
+
+header h1 {
+    color: white;
+    font-size: 250%;
+    font-family:"Arial", sans-serif;
+    text-align:center;
+    padding-top:0.3em;
+    padding-bottom:0.2em;
+}
+
+body {
+    background-color : tan;
+}
+
+header nav {
+    text-align : right;
+    padding-right:0.5em;
+    padding-top:0.2em;
+}
+
+header a {
+    color:white;
+}
+#login {
+    width: 15em;
+    margin: 0em auto 0 auto;
+    padding-top: 2em;
+    font-size : 2em;
+}
+#login input {
+    font-size : 1em;
+}
+.cube{
+    float:left;
+    position:relative;
+    padding: 0 0 1em 0;
+    overflow:hidden;
+    display: inline-block;
+    margin: 5px;
+    width : 48.5%;
+}
+
+div.error {
+    font-size : 1.75em;
+    color : red;
+}
+
+
+@media only screen and (max-device-width : 480px) {
+    .cube {
+        width : 100%;
+        font-size : 3em;
+    }
+    body, html {
+        min-width : 0em;
+    }
+    input[type='checkbox'] {
+        height : 4em;
+        width : 4em;
+    }
+    input[type='number'] {
+        font-size : 1em;
+    }
+    input[type='text'] {
+        font-size : 1em;
+    }
+    input[type='submit'] {
+        font-size : 1em;
+    }
+    select {
+        font-size : 1em;
+    }
+}
+
+
+
+.main {
+    position:relative;	/* This fixes the IE7 overflow hidden bug */
+    clear:both;
+    float:left;
+    width:100%;			/* width of whole page */
+    overflow:hidden;		/* This chops off any overhanging divs */
+    background:#c8c8c8;
+}
+
+.index {
+    position:relative;	/* This fixes the IE7 overflow hidden bug */
+    clear:both;
+    float:left;
+    width:100%;			/* width of whole page */
+    overflow:hidden;		/* This chops off any overhanging divs */
+    background:#c8c8c8;
+    text-align : center;
+    padding-top : 1em;
+    padding-bottom : 1em;
+}
+
+.options {
+    background: white;
+    margin: 0.5em;
+    border: thin solid black;
+    font-family: "Arial", Arial, sans-serif;
+}
+
+.options p {
+    margin: 0;
+    background: white;
+}
+
+.options h2 {
+    margin: 0;
+    padding: 0;
+    background: darkseagreen;
+    font-size: 1.5em;
+    border-bottom : thin solid black;
+    padding: 0.2em 0.25em 0.1em 0.25em;
+    font-weight: normal;
+}
+
+.form {
+    font-family: "Arial", Arial, sans-serif;
+    width:96%;
+    padding:0.5em;
+    margin: 0.5em auto 0.5em auto;
+
+}
+
+table {
+    background-color : lightgrey;
+    width : 100%;
+    text-align : left;
+
+    border-collapse : collapse;
+}
+th, tr {
+    width : 33%;
+    padding : .5em;
+
+}
+th {
+    border-bottom: 1pt solid black;
+    padding : .4em .5em .4em .5em;
+}
+td {
+    padding : .4em .5em .4em .5em;
+    border-bottom : 1px solid grey;
+}
+
+.spelllink {
+    text-align:right;
+}
+
+.statinput, .statval {
+    width: 3em;
+}
+
+.statval {
+    width: 3em;
+    border: thin solid black;
+    margin-left : 1em;
+}
+
+.saveval {
+    padding-left : 3.0em;
+}
+
+.labelstat {
+    margin-top : .5em;
+    border-bottom : dotted black;
+}
+
+li {
+    list-style-type:none;
+    line-height : 2em;
+    height : auto;
+}
+
+.before {
+    display: inline-block;
+    width : 15em;
+
+}
+
+
+
+.after {
+    display: inline-block;
+    width : 5em;
+    text-align: right;
+}
+
+label.box {
+    border: thin solid black;
+    padding: .25em .25em .25em .25em;
+}
+label.blank {
+    padding: .25em .25em .25em .25em;
+}
+
+.info {
+    padding : .5em;
+}
+
+.info div {
+    padding: .25em;
+    margin: .25em;
+}
+
+.spell h2 {
+    font-size : 2.5em;
+}
+.spell {
+    border-bottom : 1pt solid black;
+    padding : .5em 1em .5em 1em;
+}
+
+.spell p {
+    padding-left : 1em;
+    font-size : 1.25em;
+}
+
+.schoollevel {
+    font-style : italic;
+}
+
+.sortbar {
+    padding-left : 10%;
+    font-size : 1.5em;
+    border-bottom: solid red;
+}
+
+/**
+header p {
+    text-align: right;
+    padding-right:0.5em;
+    padding-top:0.2em;
+}
+
+
+
+body {
+    text-align:center;
+    background-image:url("cave-background.jpg");
+    background-color:black;
+    background-position:center top;
+    background-repeat:no-repeat;
+    margin-bottom:2em;
+}
+
+div {
+    background-color:white;
+    padding-bottom:1.0em;
+
+}
+
+#mainpic {
+    margin-top:1.2em;
+    padding : 0.6em;
+    border : 1pt solid black;
+}
+
+div h2 {
+    font-size:1.5em;
+    font-family:"Arial", sans-serif;
+    font-weight: normal;
+    padding-bottom:1em;
+}
+
+div h2 em {
+    font-size:1.3em;
+}
+
+body div p {
+    padding-bottom:1.3em;
+}
+
+body div p a {
+    color:#3f3622;
+    font-size:1.5em;
+    font-family:"Arial", sans-serif;
+}
+
+.text {
+    text-align:justify;
+    text-justify: inter-word;
+    margin-left:1em;
+    margin-right:1em;
+    font-family:"Times New Roman", serif;
+    padding-bottom:0em;
+    line-height:125%;
+}
+
+div.rooms {
+    margin-bottom:0em;
+    padding-bottom:0em;
+}
+
+div.room {
+    width: 200px;
+    display: inline-block;
+}
+
+div.room p {
+    padding-bottom: 0em;
+}
+
+div.room a  {
+    color:#3f3622;
+    font-size:1.0em;
+    font-family:"Arial", sans-serif;
+}
+
+h2.endh2 {
+    padding-bottom:0em;
+}
+
+p.links {
+    padding-bottom:1.5em;
+}
+**/
