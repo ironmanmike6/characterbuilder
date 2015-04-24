@@ -10,7 +10,7 @@ class Character {
     private $name = "";
     private $charNum = -1;
 
-    public $strength;
+    public $strength; //
     public $dexterity;
     public $constitution;
     public $intelligence;
