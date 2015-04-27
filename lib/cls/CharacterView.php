@@ -22,6 +22,7 @@ class CharacterView {
 <div class="options">
 <div class="form">
 <h2>Statistics</h2>
+<div id="infoform">
 <form  id="statisticsForm">
 HTML;
 
@@ -71,13 +72,14 @@ THING;
 </div>
 </div>
 </div>
+</div>
 HTML;
      return $html;
     }
    public function presentInfo() {
 
-       $races = new Races($this->site);
-       $raceArray = $races->getAllRaces();
+
+
 
        $html = "";
        $name = $this->character->getName();
@@ -87,6 +89,7 @@ HTML;
 <div class="options">
 <div class="form">
 <h2>Character Information</h2>
+<div id="infoform">
 <form>
 <div class ="info">
 <div><label for="charname">Character Name&nbsp;:&nbsp;</label><input type="text" name="charname" id="charname" value="$name"></div>
@@ -114,11 +117,32 @@ HTML;
 <input type="submit">
 </div>
 </form>
-<form method="post" action="post/race-post.php">
-       <div>
+
+HTML;
+
+
+
+       if(!is_null($this->character->getRace())) {
+           $html .= "<div id=\"raceName\"> Race : ";
+           $raceVar = $this->character->getRace();
+           $html .= $raceVar->getName();
+           $html .= "</div>";
+
+       }
+
+
+       $html .= <<<HTML
+<button id="racebutton">Set Race</button>
+<form id="raceform" method="post" action="post/race-post.php" hidden>
+<div>
 <select name="race">
 <option value="addrace">Race</option>
 HTML;
+
+
+
+       $races = new Races($this->site);
+       $raceArray = $races->getAllRaces();
 
 foreach($raceArray as $race) {
     $raceId = $race->getId();
@@ -127,9 +151,11 @@ foreach($raceArray as $race) {
 }
 
 
+
+
 $html .= <<<HTML
 </select>
-<select name="race">
+<select name="subrace">
 <option value="addsubrace">Subrace</option>
 </select>
 <input type="submit">
@@ -137,6 +163,7 @@ $html .= <<<HTML
 
 </div>
 </form>
+</div>
 </div>
 </div>
 </div>

@@ -69,8 +69,8 @@ function setProficiency(prof) {
     proficiency = prof;
 }
 
-function setup() {
-    $("#statisticsForm").click(function(event) {
+function setupStatistics() {
+    $("#statisticsForm").change(function(event) {
         //event.preventDefault();
 
         $.ajax({
@@ -93,4 +93,32 @@ function setup() {
 
         });
     });
+}
+
+function setupRaces() {
+    $("#racebutton").click( function(event){
+        event.preventDefault();
+        $("#racebutton").hide(200);
+        $("#racebutton").delay(250);
+        $("#raceform").slideDown(300);
+
+        });
+
+}
+
+function setupBox() {
+    $("h2").click( function(event) {
+        var currentTarget = event.currentTarget;
+        var sibling = $(currentTarget).siblings("#infoform");
+        sibling.toggle(800);
+    });
+
+
+
+}
+
+function setup() {
+   setupStatistics();
+    setupBox();
+    setupRaces();
 }

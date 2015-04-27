@@ -8,8 +8,10 @@
 
 class CharacterFactory {
 
-    public function __construct() {
+    private $site;
 
+    public function __construct(Site $site) {
+        $this->site = $site;
     }
 
     public function create($row = null) {
@@ -85,6 +87,14 @@ class CharacterFactory {
         $info = $row['info'];
 
         $xml = simplexml_load_string($info);
+
+        $character = $xml->character;
+        $raceId = $character->{'race'};
+
+        $races = new Races($this->site);
+        $race = $races->getRaceById($raceId);
+        $char->setRace($race);
+
 
         $stats = $xml->stats;
 

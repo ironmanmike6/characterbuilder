@@ -24,7 +24,7 @@ SQL;
 
         foreach($statement as $row) {
 
-            $factory = new CharacterFactory();
+            $factory = new CharacterFactory($this->site);
             $char = $factory->create($row);
 
             $results[] = $char;
@@ -41,7 +41,7 @@ SQL;
         $statement = $this->pdo()->prepare($sql);
         $statement->execute(array($id));
 
-        $factory = new CharacterFactory();
+        $factory = new CharacterFactory($this->site);
         $char = $factory->create($statement->fetch(PDO::FETCH_ASSOC));
 
 
@@ -62,6 +62,14 @@ SQL;
 
         /* you should enclose the following two lines in a cicle */
         $currentTrack->appendChild($domtree->createElement('name',$char->getName()));
+
+        // Add Race ID
+        $race = $char->getRace();
+        $raceId = -1;
+        if(!is_null($race)) {
+            $raceId = $race->getId();
+        }
+        $currentTrack->appendChild($domtree->createElement('race' ,$raceId));
 
         $statTag = $domtree->createElement("stats");
         $currentTag = $xmlRoot->appendChild($statTag);

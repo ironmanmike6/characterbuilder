@@ -3,8 +3,10 @@ require '../lib/dnd.inc.php';
 
 var_dump($_POST);
 $char = $user->getCurrentCharacter();
-$controller = new StatisticsController($_POST,$char );
-$controller->updateStats();
+$race = $_POST['race'];
+$subrace = $_POST['subrace'];
+$controller = new RaceController($race,$subrace, $char, $site);
+$controller->setRace();
 
 //var_dump($char);
 

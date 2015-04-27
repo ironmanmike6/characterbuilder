@@ -49,4 +49,37 @@ class Races extends Table {
         return $results;
     }
 
+    public function getRaceById($id) {
+        $race = $this->getTableName();
+
+        $raceStats = new Race_Stats($this->site);
+        $race_stats = $raceStats->getTableName();
+
+        $statsVar = new Stats($this->site);
+        $stats = $statsVar->getTableName();
+
+        $trueSQL= "select $stats.id as statsid, $race_stats.value, $race.name as racename, $race.id from $race, $stats, $race_stats where $race.id = raceid and $stats.id = statsid and $race.id =?";
+
+        $pdo = $this->pdo();
+        $statement = $pdo->prepare($trueSQL);
+        $statement->execute(array($id));
+
+        if($statement->rowCount() < 1) {
+            return null;
+        }
+
+        $row = $statement->fetch(PDO::FETCH_ASSOC);
+
+        $statsid = $row['statsid'];
+        $value = $row['value'];
+        $id = $row['id'];
+        $racename = $row['racename'];
+
+        $race = new Race($racename, $id);
+
+        $race->addSave($statsid, $value);
+
+        return $race;
+    }
+
 }

@@ -53,6 +53,7 @@ $prof = $char->getProficiencyBonus();
         <div class="options">
             <div class="form">
                 <h2>Spells</h2>
+                <div id="infoform">
                 <form>
                     <table>
                         <tr>
@@ -207,6 +208,7 @@ $prof = $char->getProficiencyBonus();
 
                     <div class="spelllink"><a  href="spells.php">All Spells</a></div>
                 </form>
+                    </div>
             </div>
         </div>
     </div>

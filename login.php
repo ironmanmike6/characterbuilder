@@ -12,6 +12,7 @@ require 'format.inc.php';
 </head>
 <body>
 <?php echo createHeader() ?>
+
 <p>
 
 <div id="login">

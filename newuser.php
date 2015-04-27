@@ -1,6 +1,6 @@
 <?php
 require 'format.inc.php';
-require 'lib/dnd.inc.php';
+//require 'lib/dnd.inc.php';
 ?>
 
 <!DOCTYPE html>
